@@ -1,0 +1,15 @@
+<%= form_with model: @project do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= form.label :goal %><br>
+    <%= form.text_field :goal %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

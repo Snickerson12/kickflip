@@ -1,0 +1,15 @@
+<% if flash[:errors] %>
+    <% flash[:errors].each do |e| %>
+        <p> <%= e %></p>
+    <% end %>
+<% end %>
+
+
+<%= form_with model: @pledge do |f| %>
+    <%= f.collection_select(:user_id, User.all, :id, :name) %>
+    <%= f.collection_select(:project_id, Project.all, :id, :name) %>
+    <%= f.text_field :amount, placeholder: "amount" %>
+    <%= f.submit %>
+<% end %>
+
+<p><%= link_to "Back to Projects Index", projects_path %></p>

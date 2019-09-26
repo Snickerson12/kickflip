@@ -1,0 +1,8 @@
+<h1> <%= @user.name %></h1>
+
+<% @user.projects.uniq.each do |project| %>
+    <p><%= link_to project.name, project_path(project) %></p>
+<% end %>
+
+<p><%= link_to "Back", users_path %> </p>
+<p><%= link_to "Edit this User", edit_user_path %> </p>

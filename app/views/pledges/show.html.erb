@@ -1,0 +1,6 @@
+<h1> Your Pledges</h1>
+
+<% @projects.each do |project| %>
+    <%= project.pledges.count %>
+    
+<% end %>

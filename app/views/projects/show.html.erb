@@ -1,0 +1,17 @@
+<h1><%= @project.name %></h1>
+<h2> Project Goal: $ <%= @project.goal %></h2>
+<h2> Current Pledges: <%= @project.pledges.count %>  </h2>
+<h3> Current Pledge Amount: </h3>
+<% sum = 0 %>
+<% @project.pledges.each do |pledge| %></h2>
+    <% sum += pledge.amount%>
+<% end %>
+<h3> $ <%= sum %> </h3>
+
+<h3>Project Backers:</h3>
+<% @project.users.uniq.each do |user| %>
+    <p> <%= link_to user.name, user_path(user) %></p>
+<% end %>
+
+<p> <strong><%= link_to "Back this Project", new_pledge_path %> </strong></p>
+<p><strong><%= link_to 'Back to Index', projects_path %> </strong></p>
